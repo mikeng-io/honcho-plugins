@@ -7,10 +7,11 @@ about things it already covers.
 
 For anything task-specific — past decisions, project context, what happened
 last week — recall on demand instead of guessing: run
-`kimi-honcho query "<question>"` via Bash. Scope it with `--scope <repo-name>`
-to recall only this project's memory, or `--scope <hostname>` for this machine.
-Sessions also join repo and hostname scopes automatically, so scoped recall
-stays relevant.
+`kimi-honcho query "<question>"` via Bash (if that command is not on PATH, use
+`node "$HOME/.kimi-code/plugins/managed/kimi-honcho/dist/cli.mjs" query "<question>"`).
+Scope it with `--scope <repo-name>` to recall only this project's memory, or
+`--scope <hostname>` for this machine. Sessions also join repo and hostname
+scopes automatically, so scoped recall stays relevant.
 
 User and assistant turns are captured to Honcho automatically at turn end,
 before compaction, and at session end, so preferences and decisions persist

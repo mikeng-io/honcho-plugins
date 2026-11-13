@@ -52,6 +52,7 @@ switch (verb) {
     const stage = join(honchoDir(), "devin", "stage");
     mkdirSync(stage, { recursive: true });
     copyFileSync(HOOK, join(stage, "hook.mjs"));
+    copyFileSync(join(ROOT, "dist", "cli.mjs"), join(stage, "cli.mjs"));
     console.log(`Staged hooks at ${join(stage, "hook.mjs")}`);
     console.log(`\nInstall the plugin:\n\n  devin plugins install mikeng-io/honcho-plugins#packages/devin-honcho\n\nor from this checkout:\n\n  devin plugins install --local ${ROOT}\n`);
     break;

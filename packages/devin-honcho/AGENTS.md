@@ -7,8 +7,9 @@ about things it already covers.
 
 For anything task-specific — past decisions, project context, what happened
 last week — recall on demand instead of guessing: run
-`devin-honcho query "<question>"` via your shell tool. Scope it with
-`--scope <repo-name>` to recall only this project's memory, or
+`devin-honcho query "<question>"` via your shell tool (if that command is not
+on PATH, use `node "$HOME/.honcho/devin/stage/cli.mjs" query "<question>"`).
+Scope it with `--scope <repo-name>` to recall only this project's memory, or
 `--scope <hostname>` for this machine. Sessions also join repo and hostname
 scopes automatically, so scoped recall stays relevant.
 

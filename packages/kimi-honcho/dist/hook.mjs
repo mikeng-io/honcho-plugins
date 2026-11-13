@@ -274,7 +274,6 @@ async function inject(p) {
   }
   const block = renderPeerCard(ctx, cfg.peerName);
   const link = `View this session in Honcho: ${honchoSessionUrl(cfg.workspace, name)}`;
-  markInjected(HOST, key);
   if (block)
     console.log([block, DIRECTIVES, link].join(`
 `));

@@ -33,7 +33,8 @@ async function inject(p: any): Promise<void> {
   }
   const block = renderPeerCard(ctx, cfg.peerName);
   const link = `View this session in Honcho: ${honchoSessionUrl(cfg.workspace, name)}`;
-  markInjected(HOST, key);
+  // Deliberately no markInjected here: headless runs discard SessionStart
+  // stdout, so the first UserPromptSubmit must still get a chance to inject.
   if (block) console.log([block, DIRECTIVES, link].join("\n"));
 }
 

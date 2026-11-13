@@ -27,6 +27,12 @@ devin-honcho query "what was I working on in this repo?" --scope <repo-name>
 devin-honcho query "what did I do on this machine?" --scope <hostname>
 ```
 
+If `devin-honcho` is not on PATH, use the staged copy directly:
+
+```sh
+node "$HOME/.honcho/devin/stage/cli.mjs" query "what did we decide about X?"
+```
+
 - `--scope <name>` confines recall to one project's or machine's sessions
   (sessions join repo + hostname scopes automatically at session start).
 - `--session <id>` confines recall to a single conversation.

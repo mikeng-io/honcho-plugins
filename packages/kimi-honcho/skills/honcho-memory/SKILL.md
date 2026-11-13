@@ -27,6 +27,12 @@ kimi-honcho query "what was I working on in this repo?" --scope <repo-name>
 kimi-honcho query "what did I do on this machine?" --scope <hostname>
 ```
 
+If `kimi-honcho` is not on PATH, use the managed copy directly:
+
+```sh
+node "$HOME/.kimi-code/plugins/managed/kimi-honcho/dist/cli.mjs" query "what did we decide about X?"
+```
+
 - `--scope <name>` confines recall to one project's or machine's sessions
   (sessions join repo + hostname scopes automatically at session start).
 - `--session <id>` confines recall to a single conversation.

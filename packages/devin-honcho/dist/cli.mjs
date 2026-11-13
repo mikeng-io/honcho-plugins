@@ -160,6 +160,7 @@ switch (verb) {
     const stage = join3(honchoDir(), "devin", "stage");
     mkdirSync(stage, { recursive: true });
     copyFileSync(HOOK, join3(stage, "hook.mjs"));
+    copyFileSync(join3(ROOT, "dist", "cli.mjs"), join3(stage, "cli.mjs"));
     console.log(`Staged hooks at ${join3(stage, "hook.mjs")}`);
     console.log(`
 Install the plugin:
