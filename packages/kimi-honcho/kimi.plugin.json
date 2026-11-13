@@ -1,0 +1,46 @@
+{
+  "name": "kimi-honcho",
+  "version": "0.2.0",
+  "description": "Persistent cross-session memory for Kimi Code CLI, powered by Honcho (unofficial community plugin)",
+  "keywords": ["honcho", "memory", "persistent-memory", "kimi-code"],
+  "author": "mikeng-io",
+  "license": "MIT",
+  "homepage": "https://github.com/mikeng-io/honcho-plugins",
+  "interface": {
+    "displayName": "Honcho Memory",
+    "shortDescription": "Persistent cross-session memory for Kimi Code CLI via Honcho lifecycle hooks"
+  },
+  "systemPromptPath": "./SYSTEM.md",
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "hooks": [
+    {
+      "event": "SessionStart",
+      "matcher": "startup|resume",
+      "command": "node ./dist/hook.mjs recall",
+      "timeout": 30
+    },
+    {
+      "event": "UserPromptSubmit",
+      "command": "node ./dist/hook.mjs prompt",
+      "timeout": 10
+    },
+    {
+      "event": "Stop",
+      "command": "node ./dist/hook.mjs writeback",
+      "timeout": 30
+    },
+    {
+      "event": "PreCompact",
+      "matcher": "manual|auto",
+      "command": "node ./dist/hook.mjs writeback",
+      "timeout": 30
+    },
+    {
+      "event": "SessionEnd",
+      "matcher": "exit|archive",
+      "command": "node ./dist/hook.mjs flush",
+      "timeout": 30
+    }
+  ]
+}

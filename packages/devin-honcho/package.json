@@ -1,0 +1,8 @@
+{
+  "name": "devin-honcho",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "bin": { "devin-honcho": "dist/cli.mjs" },
+  "license": "MIT"
+}

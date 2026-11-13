@@ -1,0 +1,24 @@
+{
+  "name": "honcho-plugins",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Persistent memory for coding-agent CLIs via Honcho — unofficial community plugins (Kimi Code CLI, Devin CLI)",
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "bin": {
+    "kimi-honcho": "packages/kimi-honcho/dist/cli.mjs",
+    "devin-honcho": "packages/devin-honcho/dist/cli.mjs"
+  },
+  "scripts": {
+    "build": "bun run build:core && bun run build:kimi && bun run build:devin",
+    "build:core": "tsc --noEmit",
+    "build:kimi": "bun build packages/kimi-honcho/src/hook.ts --target=node --outfile=packages/kimi-honcho/dist/hook.mjs && bun build packages/kimi-honcho/src/cli.ts --target=node --outfile=packages/kimi-honcho/dist/cli.mjs",
+    "build:devin": "bun build packages/devin-honcho/src/hook.ts --target=node --outfile=packages/devin-honcho/dist/hook.mjs && bun build packages/devin-honcho/src/cli.ts --target=node --outfile=packages/devin-honcho/dist/cli.mjs",
+    "test": "bun test packages/core"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "license": "MIT"
+}

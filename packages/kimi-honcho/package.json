@@ -1,0 +1,8 @@
+{
+  "name": "kimi-honcho",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "bin": { "kimi-honcho": "dist/cli.mjs" },
+  "license": "MIT"
+}
